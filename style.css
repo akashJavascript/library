@@ -7,6 +7,8 @@
   }
   .bookContainer {
       display: flex;
+      flex-wrap: wrap;
+
     }
     header{
       display: flex;
