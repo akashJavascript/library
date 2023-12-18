@@ -1,0 +1,48 @@
+
+h1,div{
+    font-family: 'Poppins';
+}
+h1{
+    margin-left: 30px;
+}
+.bookContainer {
+    display: flex;
+  }
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(202, 202, 202);
+    margin-bottom: 30px;
+  }
+  .card {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin: 10px;
+    padding: 20px 10px;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 150px;
+    max-height: 150px;
+    overflow-y: auto;
+    line-height: 1.2;
+
+  }
+  
+  .elInCard {
+    margin-bottom: 5px;
+    text-align: center; /* Center text horizontally */
+    max-width:30ch;
+
+    word-wrap: break-word;
+  }
+  .newBook{
+    background-color: rgb(238, 238, 238);
+    border:0.5px solid black;
+    border-radius: 15px;
+    height: 50px;
+    width: 100px;
+    margin-right: 30px;
+  }
