@@ -65,8 +65,15 @@ function displayBooks() {
         createAndAppendElement(newCard, `"${book.title}"`, 'elInCard');
         createAndAppendElement(newCard, book.author, 'elInCard');
         createAndAppendElement(newCard, `${book.pages} pages`, 'elInCard');
-        createAndAppendElement(newCard, `${book.readStatus ? 'read' : 'not read yet'}`, 'elInCard');
-
+        // createAndAppendElement(newCard, `${book.readStatus ? 'read' : 'not read yet'}`, 'elInCard');
+let changeReadStatusBtn = document.createElement('button')
+changeReadStatusBtn.textContent = `${book.readStatus ? 'read' : 'not read yet'}`;
+changeReadStatusBtn.addEventListener('click',function(){
+    book.readStatus = !book.readStatus;
+    displayBooks();
+})
+changeReadStatusBtn.classList.add('elInCard')
+newCard.appendChild(changeReadStatusBtn);
         let removeBtn = document.createElement('button');
         removeBtn.textContent = 'Remove Book';
         removeBtn.setAttribute('data-index', index);
@@ -74,7 +81,6 @@ function displayBooks() {
         removeBtn.addEventListener('click', () => {
             removeBook(index);
         });
-
         newCard.appendChild(removeBtn);
         container.appendChild(newCard);
     });
