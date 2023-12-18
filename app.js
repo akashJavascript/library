@@ -1,9 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
     const myLibrary = [];
     const dialog = document.querySelector('.dialog');
     const addBookBtn = document.querySelector('.newBook');
+const submitBtn = document.querySelector('.submitBtn')
 
-    addBookBtn.addEventListener('click', function () {
+submitBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // Check if the form is valid
+    if (document.querySelector('form').checkValidity()) {
+        let inputTitle = document.querySelector('#titleField').value;
+        let inputAuthor = document.querySelector('#authorField').value;
+        let inputPages = document.querySelector('#pages').value;
+        let inputRead = document.querySelector('#readField').checked;
+        
+        console.log(inputTitle, inputAuthor, inputPages, inputRead);
+        document.querySelector('#titleField').value = '';
+        document.querySelector('#authorField').value = '';
+        document.querySelector('#pages').value = '';
+        document.querySelector('#readField').checked =false ;
+        // Rest of your code
+        dialog.classList.add('dialogHidden');
+        dialog.classList.remove('dialogShow');
+    } else {
+        // If the form is not valid, you might want to display an error message or take some other action.
+        alert('Please fill in all fields.');
+    }
+});
+
+function saveDataAndSend(){
+
+}
+   addBookBtn.addEventListener('click', function () {
         dialog.classList.remove('dialogHidden');
         dialog.classList.add('dialogShow');
     });
@@ -49,4 +76,3 @@ document.addEventListener("DOMContentLoaded", function () {
     let hobbit = addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
     let b = addBookToLibrary('abcdfdffdfdfdfdffdfsfdsfdsfdsfsdfffsdfds44334fddfdfdffddfdfdfdf', 'ddd,,d,d,d', 545, true);
     displayBooks(myLibrary);
-});

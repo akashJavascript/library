@@ -3,24 +3,29 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
 </head>
 <body>
-    <div  class="dialogHidden dialog">
-        <h1>Add new book</h1>
-        <input type="text" name="title" id="titleField" placeholder="Title">
-        <input type="text" name="author" id="authorField" placeholder="Author">
-        <input type="number" name="pages" id="pages" placeholder="Number of pages">
-       <label for="readStatus">Have you read Yet?</label> <input type="checkbox" name="readStatus" id="readField">
-        <button type="submit">Submit</button>
-    </div>
-    <header>    <h1 class="heading">My Library</h1><button class="newBook">Add Book</button>    </header>
-    <div class="bookContainer">
-    </div>
-<script src="app.js"></script>
+    <form>
+        <div class="dialogHidden dialog">
+            <h1>Add new book</h1>
+            <input type="text" name="title" id="titleField" placeholder="Title" required>
+            <input type="text" name="author" id="authorField" placeholder="Author" required>
+            <input type="number" name="pages" id="pages" placeholder="Number of pages" required>
+            <label for="readStatus">Have you read Yet?</label>
+            <input type="checkbox" name="readStatus" id="readField">
+            <button type="submit" class="submitBtn">Submit</button>
+        </div>
+    </form>
+    <header>
+        <h1 class="heading">My Library</h1>
+        <button class="newBook">Add Book</button>
+    </header>
+    <div class="bookContainer"></div>
+    <script src="app.js"></script>
 </body>
 </html>
